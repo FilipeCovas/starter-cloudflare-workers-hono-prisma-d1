@@ -167,3 +167,4 @@ dist
 .wrangler/
 
 /src/generated/prisma
+wrangler.jsonc

@@ -9,17 +9,17 @@
   "compatibility_date": "2025-11-13",
   "observability": {
     "enabled": true
-  },
-  "d1_databases": [
+  }
+  /**"d1_databases": [
     {
-      "binding": "api_example_d1_prisma",
-      "database_name": "api-example-d1-prisma",
-      "database_id": "fc5ec99d-ebac-4acd-bcd0-78a8c586d531",
+      "binding": "",
+      "database_name": "",
+      "database_id": "",
       "migrations_dir": "prisma/migrations",
       "remote": true
     }
   ]
-  /**
+ 
    * Smart Placement
    * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
    */
