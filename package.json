@@ -6,16 +6,28 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "db:migrate": "prisma migrate dev && node scripts/sync-migrations.js",
+    "db:generate": "prisma generate",
+    "db:push-remote": "node scripts/sync-migrations.js && wrangler d1 migrations apply api-example-d1-prisma --remote",
+    "db:push-local": "node scripts/sync-migrations.js && wrangler d1 migrations apply api-example-d1-prisma --local",
+    "db:studio": "prisma studio",
+    "db:seed": "node --loader tsx prisma/seed.ts",
+    "db:sync-migrations": "node scripts/sync-migrations.js"
   },
   "dependencies": {
+    "@prisma/adapter-d1": "^6.19.0",
+    "@prisma/client": "^6.19.0",
     "chanfana": "^2.6.3",
+    "dotenv": "^17.2.3",
     "hono": "^4.6.20",
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251115.0",
     "@types/node": "22.13.0",
     "@types/service-worker-mock": "^2.0.4",
+    "prisma": "^6.19.0",
     "wrangler": "^4.47.0"
   }
 }
